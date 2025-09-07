@@ -100,31 +100,130 @@ namespace TARpv24Ckeel
             return kusi;
         }
 
-        //public static string Pingi (string nimi1, string nimi2) 
-        //{
-        //    string neig = "";
-        //    int vastunud = 0;
+        public static string Pingi(string nimi1, string nimi2)
+        {
+            string neig = "";
+            int vastunud = 0;
 
-        //    if (nimi1 == "Maksim")
-        //    {
-        //        neig = "Ja";
-        //    }
+            if (nimi1 == "Maksim")
+            {
+                neig = "Ja";
+            }
 
-        //    else if (nimi2 == "Nikita")
-        //    {
-        //        neig = "Ja";
-        //    }
-        //    else
-        //    {
-        //        neig = "thats it, Im stealing your cookies >:3";
-        //    }
-        //    return neig;
-        //}
-    
-        public static float HindTrio (float a, float b)
+            else if (nimi2 == "Nikita")
+            {
+                neig = "Ja";
+            }
+            else
+            {
+                neig = "thats it, Im stealing your cookies >:3";
+            }
+            return neig;
+        }
+
+        public static float HindTrio(float a, float b)
         {
             float formula = a * b;
             return formula;
+        }
+
+        public static void CalculateRenovation()
+        {
+            // Küsi kõigepealt, kas remonti soovitakse
+            Console.Write("Kas soovid teha põranda remonti? (jah/ei): ");
+            string soov = Console.ReadLine().ToLower();
+
+            if (soov == "jah")
+            {
+                // Küsi toa mõõdud
+                Console.Write("Sisesta toa pikkus meetrites: ");
+                double pikkus = double.Parse(Console.ReadLine());
+
+                Console.Write("Sisesta toa laius meetrites: ");
+                double laius = double.Parse(Console.ReadLine());
+
+                // Arvuta pindala
+                double pindala = pikkus * laius;
+                Console.WriteLine($"Toa põranda pindala on {pindala} m².");
+
+                // Küsi remondi hind
+                Console.Write("Sisesta põranda vahetuse hind ühe ruutmeetri kohta (€): ");
+                double hindRuutmeetriKohta = double.Parse(Console.ReadLine());
+
+                double koguHind = pindala * hindRuutmeetriKohta;
+                Console.WriteLine($"Põranda vahetamise kogumaksumus on {koguHind} €.");
+            }
+            else
+            {
+                Console.WriteLine("Remonti ei tehta.");
+            }
+        }
+
+        // Change the access modifier of LeiaPikkuse from private to public
+        public static string LeiaPikkuse(int pikkus, string sugu)
+        {
+            if (sugu == "mees")
+            {
+                if (pikkus < 165)
+                {
+                    return "Oled lühike mees.";
+                }
+                else if (pikkus <= 185)
+                {
+                    return "Oled keskmise pikkusega mees.";
+                }
+                else
+                {
+                    return "Oled pikk mees.";
+                }
+            }
+            else if (sugu == "naine")
+            {
+                if (pikkus < 155)
+                {
+                    return "Oled lühike naine.";
+                }
+                else if (pikkus <= 175)
+                {
+                    return "Oled keskmise pikkusega naine.";
+                }
+                else
+                {
+                    return "Oled pikk naine.";
+                }
+            }
+            else
+            {
+                return "Tundmatu sugu – ei saa võrrelda pikkust.";
+            }
+        }
+
+        public static double CalculateShopping()
+        {
+            double total = 0;
+
+            // Piim
+            Console.Write("Kas soovid osta piima? (jah/ei): ");
+            if (Console.ReadLine().ToLower() == "jah")
+            {
+                total += 1.00;
+            }
+
+            // Sai
+            Console.Write("Kas soovid osta saia? (jah/ei): ");
+            if (Console.ReadLine().ToLower() == "jah")
+            {
+                total += 0.80;
+            }
+
+            // Leib
+            Console.Write("Kas soovid osta leiba? (jah/ei): ");
+            if (Console.ReadLine().ToLower() == "jah")
+            {
+                total += 1.10;
+            }
+
+            return total;
         }
     }
 }

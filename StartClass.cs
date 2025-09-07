@@ -81,29 +81,163 @@ namespace TARpv24Ckeel
                 }
             }
 
-            Console.WriteLine("Yo, kas te tahate suurem ruum?");
-            float priceforpetemeeter = 20;
-            string BOBTHEBUILDER = Console.ReadLine();
-            if (BOBTHEBUILDER != "jah")
+            // harjutus 3
+
+            static void Main()
             {
-                Console.WriteLine("Ma olen väga kurb... 3_;");
+                // Kutsub funktsiooni teisest failist
+                Osa1_funktisoonid.CalculateRenovation();
+            }
+
+            // Harjutus 4
+
+            Console.Write("Sisesta soodushind (€): ");
+            double soodusHind = double.Parse(Console.ReadLine());
+
+            double algHind = soodusHind / 0.7;
+
+            Console.WriteLine($"Alghind enne 30% soodustust oli {algHind:F2} €.");
+
+            // Harjutus 5
+            Console.Write("Sisesta toa temperatuur (°C): ");
+            double temperatuur = double.Parse(Console.ReadLine());
+
+            if (temperatuur > 18)
+            {
+                Console.WriteLine("Temperatuur on üle 18 °C – toasoojus on sobiv.");
             }
             else
             {
-                try
+                Console.WriteLine("Temperatuur on 18 °C või madalam – võiks olla soojem (soovitav talvel vähemalt 19 °C).");
+            }
+
+            // Harjutus 6
+            Console.Write("Sisesta oma pikkus sentimeetrites: ");
+            int pikkus = int.Parse(Console.ReadLine());
+
+            if (pikkus < 160)
+            {
+                Console.WriteLine("Oled lühike.");
+            }
+            else if (pikkus <= 180)
+            {
+                Console.WriteLine("Oled keskmise pikkusega.");
+            }
+            else
+            {
+                Console.WriteLine("Oled pikk.");
+            }
+
+            Console.Write("Sisesta oma pikkus sentimeetrites: ");
+            int pikkus2 = int.Parse(Console.ReadLine());
+
+            Console.Write("Sisesta oma sugu (mees/naine): ");
+            string sugu = Console.ReadLine().ToLower();
+
+            if (sugu == "mees")
+            {
+                if (pikkus < 165)
                 {
-                    Console.WriteLine("Kui Palju?");
-                    float a = float.Parse(Console.ReadLine());
-                    float b = float.Parse(Console.ReadLine());
-                    float formula = a*b;
-                    Console.WriteLine(Osa1_funktisoonid.HindTrio(a, b));
-                    Console.WriteLine($"Te peate makstaa {formula*priceforpetemeeter}");
+                    Console.WriteLine("Oled lühike mees.");
                 }
-                catch (Exception e)
+                else if (pikkus <= 185)
                 {
-                    Console.WriteLine(e); 
+                    Console.WriteLine("Oled keskmise pikkusega mees.");
+                }
+                else
+                {
+                    Console.WriteLine("Oled pikk mees.");
                 }
             }
+            else if (sugu == "naine")
+            {
+                if (pikkus < 155)
+                {
+                    Console.WriteLine("Oled lühike naine.");
+                }
+                else if (pikkus <= 175)
+                {
+                    Console.WriteLine("Oled keskmise pikkusega naine.");
+                }
+                else
+                {
+                    Console.WriteLine("Oled pikk naine.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Tundmatu sugu – ei saa võrrelda pikkust.");
+            }
+
+            // Harjutus 7
+            Console.Write("Sisesta oma pikkus sentimeetrites: ");
+            int pikkus3 = int.Parse(Console.ReadLine());
+
+            Console.Write("Sisesta oma sugu (mees/naine): ");
+            string sugu2 = Console.ReadLine().ToLower();
+
+            // Call function
+            string tulemus = Osa1_funktisoonid.LeiaPikkuse(pikkus, sugu);
+
+            Console.WriteLine(tulemus);
+
+            // Harjutus 8
+
+            double total = Osa1_funktisoonid.CalculateShopping();
+            Console.WriteLine($"Ostetud kraam maksab kokku {total:F2} €.");
+
+            //Console.WriteLine("Yo, kas te tahate suurem ruum?");
+            //float priceforpetemeeter = 20;
+            //string BOBTHEBUILDER = Console.ReadLine();
+            //if (BOBTHEBUILDER != "jah")
+            //{
+            //    Console.WriteLine("Ma olen väga kurb... 3_;");
+            //}
+            //else
+            //{
+            //    try
+            //    {
+            //        Console.WriteLine("Kui Palju?");
+            //        float a = float.Parse(Console.ReadLine());
+            //        float b = float.Parse(Console.ReadLine());
+            //        float formula = a*b;
+            //        Console.WriteLine(Osa1_funktisoonid.HindTrio(a, b));
+            //        Console.WriteLine($"Te peate makstaa {formula*priceforpetemeeter}");
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        Console.WriteLine(e); 
+            //    }
+            //}
+
+            //Console.Write("Kas soovid teha põranda remonti? (jah/ei): ");
+            //string soov = Console.ReadLine().ToLower();
+
+            //if (soov == "jah")
+            //{
+            //    // Küsi toa mõõdud
+            //    Console.Write("Sisesta toa pikkus meetrites: ");
+            //    double pikkus = double.Parse(Console.ReadLine());
+
+            //    Console.Write("Sisesta toa laius meetrites: ");
+            //    double laius = double.Parse(Console.ReadLine());
+
+            //    // Arvuta pindala
+            //    double pindala = pikkus * laius;
+            //    Console.WriteLine($"Toa põranda pindala on {pindala} m².");
+
+            //    // Küsi remondi hind
+            //    Console.Write("Sisesta põranda vahetuse hind ühe ruutmeetri kohta (€): ");
+            //    double hindRuutmeetriKohta = double.Parse(Console.ReadLine());
+
+            //    double koguHind = pindala * hindRuutmeetriKohta;
+            //    Console.WriteLine($"Põranda vahetamise kogumaksumus on {koguHind} €.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Remonti ei tehta.");
+            //}
+
 
 
             //I.Osa. Andmetüübid, Alamfunktsioon
