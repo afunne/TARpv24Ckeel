@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TARpv24Ckeel
 {
@@ -235,6 +236,41 @@ namespace TARpv24Ckeel
 
             double total = Osa1_funktisoonid.CalculateShopping();
             Console.WriteLine($"Ostetud kraam maksab kokku {total:F2} €.");
+
+            // tasks from 3rd theme
+
+            // Harjutus 1
+
+            //Random number squares
+            //Task:
+            //Create a class NumberProcessing with a method GenerateSquares(int min, int max) that:
+
+            //Generates 2 random integers in the range[-100, 100] → N and M,
+
+            //finds all integers between them(from smallest to largest), // returns the masssive
+
+            //returns an array where each value is the square of the corresponding number.
+
+            //In the main method, print all results together with the initial value (for example, "4 → 16").
+
+            //Translated with DeepL.com(free version)
+
+            int[] massive=Osa3_funktsioonid.ArvuTöötlus(-10, 10);
+            foreach (int m in massive) 
+            {
+                Console.WriteLine(m);
+            }
+
+            // Ülesanded 2
+            double[] arvud2 = Osa3_funktsioonid.Tekstisy_arvud();
+            var tulemus2 = Osa3_funktsioonid.AnalüsiArve(arvud2);
+            Console.WriteLine($"Summa: {tulemus2.Item1:F2}, Keskmine: {tulemus2.Item2:F2}, Viimane: {tulemus2.Item3:F2}");
+
+
+
+
+
+
 
             //Console.WriteLine("Yo, kas te tahate suurem ruum?");
             //float priceforpetemeeter = 20;
