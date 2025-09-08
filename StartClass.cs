@@ -83,11 +83,11 @@ namespace TARpv24Ckeel
 
             // harjutus 3
 
-            static void Main()
-            {
-                // Kutsub funktsiooni teisest failist
-                Osa1_funktisoonid.CalculateRenovation();
-            }
+          
+            
+            // Kutsub funktsiooni teisest failist
+            Osa1_funktisoonid.CalculateRenovation();
+            
 
             // Harjutus 4
 
