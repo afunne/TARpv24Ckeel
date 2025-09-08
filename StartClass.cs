@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,31 +15,80 @@ namespace TARpv24Ckeel
         public static void Main(string[] args)
         {
             Random rnd = new Random();
+            // 3. Osa mssiivid, List, Kordused
+            List<string> nimed = new List<string>();
+
+            for (int i = 0; i < 10; i++) 
+            {
+                Console.WriteLine($"{i + 1}. Nimi: ");
+                nimed.Add(Console.ReadLine());
+            }
+            foreach (string nimi in nimed)
+            {
+                Console.WriteLine($"Nimi:{nimi}");
+            }
+            int[] arvud = new int[10];
+
+
+            int j = 0;
+            while (j<10) 
+            {
+                Console.WriteLine(j + 1);
+                arvud[j] = rnd.Next(1, 101);
+                j++;
+            }
+            foreach (var arv in arvud)
+            {
+                Console.WriteLine(arv);
+            }
+
+            List<Isiki> isikud = new List<Isiki>();
+
+            j = 0;
+            do
+            {
+                Console.WriteLine(j+1);
+                Isiki isik = new Isiki();
+                Console.Write("Eesnimi: ");
+                isik.eesnimi = Console.ReadLine();
+                isikud.Add(isik);
+                j++;
+            } while (j < 10); // classical writing of do / while
+
+            isikud.Sort((x, y) => x.eesnimi.CompareTo(y.eesnimi));
+            Console.WriteLine($"Kooku on {isikud.Count()} isikud");
+            foreach (Isiki isik in isikud)
+            {
+                isik.Prindi_andmed();
+            }
+            Console.WriteLine($"Kolmandal kohal on {isikud[2].eesnimi} isik");
+
+
             //2. Osa Valikud
-            int kuu_number = rnd.Next(1, 12);
-            string nimetus = Osa1_funktisoonid.Kuu_nimetus(kuu_number);
-            Console.WriteLine($"Nr: {kuu_number}-{nimetus}");
+            //int kuu_number = rnd.Next(1, 12);
+            //string nimetus = Osa1_funktisoonid.Kuu_nimetus(kuu_number);
+            //Console.WriteLine($"Nr: {kuu_number}-{nimetus}");
 
-            Console.WriteLine("Kas tahad dekooreerida arv-->nimitusse");
-            string vastus = Console.ReadLine();
-            if (vastus.ToLower() != "jah")
-            {
-                Console.WriteLine("Ei taha, siis ei taha");
-            }
-            else
-            {
-                try
-                {
-                    Console.Write("Nr: ");
-                    kuu_number = int.Parse(Console.ReadLine());
-                    Console.WriteLine(Osa1_funktisoonid.Hooaeg(kuu_number));
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
+            //Console.WriteLine("Kas tahad dekooreerida arv-->nimitusse");
+            //string vastus = Console.ReadLine();
+            //if (vastus.ToLower() != "jah")
+            //{
+            //    Console.WriteLine("Ei taha, siis ei taha");
+            //}
+            //else
+            //{
+            //    try
+            //    {
+            //        Console.Write("Nr: ");
+            //        kuu_number = int.Parse(Console.ReadLine());
+            //        Console.WriteLine(Osa1_funktisoonid.Hooaeg(kuu_number));
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        Console.WriteLine(e);
+            //    }
 
-            }
+            //}
 
             // harjutus 1
             Console.WriteLine("Mul on amnesia aga ma arvan, et sa oled Juku. Kas ma olen õige?");
