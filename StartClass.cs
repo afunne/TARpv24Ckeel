@@ -84,8 +84,7 @@ namespace TARpv24Ckeel
             // harjutus 3
 
           
-            
-            // Kutsub funktsiooni teisest failist
+           
             Osa1_funktisoonid.CalculateRenovation();
             
 
