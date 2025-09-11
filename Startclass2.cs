@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace TARpv24Ckeel
 {
+
     internal class Startclass2
     {
 
-
         public static void Main(string[] args)
         {
+            Osa3_funktsioonid.ArvaArv();
+
             double[] arvud = Osa3_funktsioonid.Tekstisy_arvud();
             var tulemus = Osa3_funktsioonid.AnalüsiArve(arvud);
             Console.WriteLine($"Summa: {tulemus.Item1:F2}, Keskmine: {tulemus.Item2:F2}, Viimane: {tulemus.Item3:F2}");
@@ -87,10 +89,14 @@ namespace TARpv24Ckeel
 
                 Console.WriteLine("Vanem inimene:");
                 stat.Item4.PrindiAndmed();
+
+                Console.WriteLine();
+                //Harjutus 4
+                Console.WriteLine("Sisesta märksõna:");
+
+                //Haärjutus 5
             }
         }
-
-
     }
 }
 
