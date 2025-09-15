@@ -11,6 +11,8 @@ namespace TARpv24Ckeel
     {
         public class õpilane
         {
+
+
             public string Name { get; set; }
             public List<int> Grades { get; set; }
 
