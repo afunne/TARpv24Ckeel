@@ -282,6 +282,8 @@ namespace TARpv24Ckeel
                 }
             }
 
+            // working with files because Maksim Ts told me so (I ONLY SLEPT FOR 3 HOURS. THANK YOU VERY MUCH)
+
             // harjutus 1 
             static void RunTask1()
             {

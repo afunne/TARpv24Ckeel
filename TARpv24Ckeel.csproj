@@ -5,7 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>TARpv24Ckeel.StartClass</StartupObject>
+    <StartupObject>TARpv24Ckeel._5theme3to7tasks.Program</StartupObject>
   </PropertyGroup>
 
 </Project>
